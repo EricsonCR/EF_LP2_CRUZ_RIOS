@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/style_index.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="contenedor">
+		<h1>VIVA AIR - VENTA BOLETOS</h1>
+		<form th:action="@{/venta/agregar}" th:object="${VentaDetalle}">
+			<div class="cabecera">
+				<div class="left">
+					<div class="group">
+						<label>Ciudad Origen</label>
+						<select th:field="*{CodigoOrigen}">
+							<option th:each="c:${ListaCiudades}" th:value="${c.CodigoPostal}" th:text="${c.Nombre}" />
+						</select>
+					</div>
+					<div class="group">
+						<label>Fecha Salida</label>
+						<input th:field="*{FechaSalida}" type="date">
+					</div>
+					<div class="group">
+						<label>Nombre</label>
+						<input th:field="*{NombreComprador}" type="text">
+					</div>
+				</div>
+				<div class="rigth">
+					<div class="group">
+						<label>Ciudad Destino</label>
+						<select th:field="*{CodigoDestino}">
+							<option th:each="c:${ListaCiudades}" th:value="${c.CodigoPostal}" th:text="${c.Nombre}" />
+						</select>
+					</div>
+					<div class="group">
+						<label>Fecha Retorno</label>
+						<input th:field="*{FechaRetorno}" type="date">
+					</div>
+					<div class="group">
+						<label>Cantidad</label>
+						<input th:field="*{Cantidad}" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="botones">
+				<input type="submit" name="" id="" value="Agregar">
+				<input type="reset" name="" id="" value="Limpiar">
+			</div>
+		</form>
+		<div class="detalle">
+			<table>
+				<thead>
+					<tr>
+						<th>Ciudad Origen</th>
+						<th>Ciudad Destino</th>
+						<th>Fecha Salida</th>
+						<th>Fecha Retorno</th>
+						<th>Comprador</th>
+						<th>Cantidad</th>
+						<th>Sub Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="d:${ListaVentaDetalle}">
+						<td th:text="${d.CodigoOrigen}"></td>
+						<td th:text="${d.CodigoDestino}"></td>
+						<td th:text="${d.FechaSalida}"></td>
+						<td th:text="${d.FechaRetorno}"></td>
+						<td th:text="${d.NombreComprador}"></td>
+						<td th:text="${d.Cantidad}"></td>
+						<td th:text="${d.SubTotal}"></td>
+					</tr>
+					<tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="grabar">
+			<a th:href="@{/venta/grabar}">Grabar</a>
+		</div>
+	</div>
+</body>
+
+</html>

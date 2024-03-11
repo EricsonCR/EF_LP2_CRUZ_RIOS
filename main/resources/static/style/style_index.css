@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+.cabecera{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.left, .rigth{
+    border: 1px solid;
+}
+
+.group{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.detalle{
+    border: 1px solid;
+}
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table th{
+    padding: 10px;
+    background-color: #000;
+    color: #FFF;
+}
+
+table td{
+    padding: 10px;
+}
+
+table tr:nth-child(even){
+    background-color: #DDD;
+}
+
+.botones{
+    padding: 20px;
+}
+
+.botones input{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.grabar{
+    padding: 20px;
+}
+
+.grabar a{
+    border: 1px solid;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
